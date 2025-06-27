@@ -1,2 +1,175 @@
-<h1>Hello world!</h1>
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Czas na Skupienie – Wtyczka Chrome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 3em 1em;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin-top: 0.6em;
+      font-size: 1.2em;
+    }
+    .cta-button {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 0.9em 2em;
+      font-size: 1em;
+      border-radius: 8px;
+      margin-top: 1.2em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .cta-button:hover {
+      background: #059669;
+    }
+    section {
+      padding: 3em 1em;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5em;
+    }
+    .feature {
+      background: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #4f46e5;
+    }
+    table {
+      width: 100%;
+      margin-top: 2em;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 1em;
+      text-align: center;
+    }
+    th {
+      background: #4f46e5;
+      color: white;
+    }
+    .check { color: #10b981; font-weight: bold; }
+    .cross { color: #ef4444; font-weight: bold; }
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.9em;
+    }
+    .faq {
+      background: white;
+      padding: 1em;
+      border-radius: 8px;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .faq strong { display: block; margin-bottom: 0.4em; color: #4f46e5; }
+    @media (max-width: 768px) {
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Czas na Skupienie</h1>
+    <p>Wtyczka Chrome, która pomaga Ci skupić się i osiągać cele 📵⏳</p>
+    <a href="https://chromewebstore.google.com/detail/" class="cta-button">Zainstaluj teraz</a>
+  </header>
+
+  <section>
+    <h2>Dlaczego warto?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>⏱️ Blokady czasowe</h3>
+        <p>Ustaw blokady stron na konkretne godziny i dni tygodnia.</p>
+      </div>
+      <div class="feature">
+        <h3>🎯 Cele i zadania</h3>
+        <p>Dodawaj cele do wykonania, które trzeba odhaczyć przed odblokowaniem.</p>
+      </div>
+      <div class="feature">
+        <h3>🔥 Tryb Full Focus</h3>
+        <p>Pomodoro z przerwami i całkowitym blokowaniem stron.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wersja darmowa vs Premium</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Funkcja</th>
+          <th>Darmowa</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Liczba blokad</td><td>2</td><td class="check">Nielimitowana</td></tr>
+        <tr><td>Własne strony</td><td>4</td><td class="check">Nielimitowane</td></tr>
+        <tr><td>Blokowanie słów kluczowych</td><td>2</td><td class="check">Nielimitowane</td></tr>
+        <tr><td>Backup i import danych</td><td class="cross">Nie</td><td class="check">Tak</td></tr>
+        <tr><td>Zabezpieczenie hasłem</td><td class="cross">Nie</td><td class="check">Tak</td></tr>
+      </tbody>
+    </table>
+    <div style="text-align: center; margin-top: 2em;">
+      <a href="https://extensiohub.lemonsqueezy.com/buy/..." class="cta-button">Kup Premium</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>FAQ – Najczęstsze pytania</h2>
+    <div class="faq">
+      <strong>Jak aktywować Premium?</strong>
+      <span>Po zakupie otrzymasz klucz licencyjny. Wklej go w ustawieniach wtyczki.</span>
+    </div>
+    <div class="faq">
+      <strong>Czy jest wersja próbna?</strong>
+      <span>Tak! Masz 3 dni na testy Premium bez opłat.</span>
+    </div>
+    <div class="faq">
+      <strong>Jak działa tryb Full Focus?</strong>
+      <span>To tryb Pomodoro – np. 20 minut pracy, 5 minut przerwy, kilka cykli.</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Czas na Skupienie. Stworzono z pasją do produktywności. | <a href="mailto:kontakt@example.com" style="color: #93c5fd;">Kontakt</a>
+  </footer>
+</body>
+</html>
