@@ -7,6 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { margin: 0; font-family: 'Inter', sans-serif; background: #f9fafb; color: #1f2937; line-height: 1.6; }
+    nav { position: sticky; top: 0; background: white; padding: 1em; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 1000; }
+    nav ul { display: flex; justify-content: center; gap: 2em; list-style: none; margin: 0; padding: 0; }
+    nav a { text-decoration: none; color: #4f46e5; font-weight: 600; }
+    nav a:hover { color: #4338ca; }
     header { background: #4f46e5; color: white; padding: 3em 1em; text-align: center; }
     header h1 { margin: 0; font-size: 2.5em; }
     header p { margin-top: 0.6em; font-size: 1.2em; }
@@ -25,11 +29,6 @@
     footer { background: #111827; color: #e5e7eb; text-align: center; padding: 2em 1em; font-size: 0.9em; }
     .faq { background: white; padding: 1em; border-radius: 8px; margin-bottom: 1em; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
     .faq strong { display: block; margin-bottom: 0.4em; color: #4f46e5; }
-    .grid-benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2em; margin-top: 2em; }
-    .grid-benefits ul { list-style: none; padding: 0; }
-    .grid-benefits li { position: relative; padding-left: 1.2em; margin-bottom: 0.8em; }
-    .grid-benefits li::before { content: "\2714"; color: #059669; position: absolute; left: 0; }
-    .pricing-table { margin-top: 2em; }
     .buy-button { background: #f97316; color: white; padding: 0.8em 1.5em; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 1em; transition: background 0.2s; }
     .buy-button:hover { background: #fb923c; }
     .strike { text-decoration: line-through; color: #9ca3af; margin-right: 0.3em; }
@@ -37,13 +36,22 @@
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#comparison">Comparison</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Time To Focus</h1>
     <p>The ultimate Chrome extension for focus, discipline, and productivity.</p>
     <a href="https://chromewebstore.google.com/detail/" class="cta-button">Install Now</a>
   </header>
 
-  <section>
+  <section id="features">
     <h2>What Makes It Special?</h2>
     <div class="features">
       <div class="feature">
@@ -74,10 +82,18 @@
         <h3>🌙 Dark Mode</h3>
         <p>Comfortable for night owls – built-in dark theme support.</p>
       </div>
+      <div class="feature">
+        <h3>🧠 Mental Discipline</h3>
+        <p>Train your brain to focus consistently with positive habit building.</p>
+      </div>
+      <div class="feature">
+        <h3>⭐ Free features</h3>
+        <p>Explore for free — unlock the full potential anytime with Premium.</p>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section id="comparison">
     <h2>Free vs Premium</h2>
     <table>
       <thead>
@@ -98,13 +114,37 @@
         <tr><td>Ongoing Updates</td><td class="check">Yes</td><td class="check">Yes</td></tr>
       </tbody>
     </table>
-    <div style="text-align: center; margin-top: 2em;">
-      <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239" class="buy-button">Upgrade to Premium</a>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing Options</h2>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Monthly</th>
+          <th class="highlight">Yearly (Save 20%)</th>
+          <th>One-Time Purchase</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>$2.99 / month</td>
+          <td class="highlight">
+            <span class="strike">$35.88</span>
+            <span>$28.70 / year</span>
+            <span class="best-value">Best Value</span>
+          </td>
+          <td>$49.99 one-time</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center; margin-top: 1.5em;">
+      <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239?discount=0" class="buy-button">Upgrade to Premium</a>
       <p style="margin-top: 0.5em; font-size: 0.9em; color: #6b7280;">3-day free trial included – cancel anytime</p>
     </div>
   </section>
 
-  <section>
+  <section id="faq">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
       <strong>How do I activate Premium?</strong>
