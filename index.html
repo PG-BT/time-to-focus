@@ -4,7 +4,11 @@
   <link rel="icon" type="image/png" href="icon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Time To Focus – Chrome Extension</title>
+  <meta name="description" content="Time To Focus is a powerful Chrome extension to block distractions, set goals, and track your focus. Start focusing today!">
+  <meta name="keywords" content="focus, chrome extension, productivity, block websites, pomodoro, time management, goals">
+  <meta name="author" content="Time To Focus">
+  <meta name="robots" content="index, follow">
+  <title>Time To Focus – Stay Productive with Our Chrome Extension</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
     body { margin: 0; font-family: 'Inter', sans-serif; background: #f9fafb; color: #1f2937; line-height: 1.6; }
@@ -35,6 +39,12 @@
     .buy-button:hover { background: #fb923c; }
     .strike { text-decoration: line-through; color: #9ca3af; margin-right: 0.3em; }
     .best-value { display: block; margin-top: 0.5em; color: #059669; font-weight: bold; }
+
+    @media (max-width: 600px) {
+    header h1 { font-size: 1.8em; }
+    header p { font-size: 1em; }
+    .cta-button { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -49,20 +59,27 @@
   </nav>
 
 <header id="install">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 0.6em; flex-wrap: wrap;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 0.6em; flex-wrap: wrap; margin-bottom: 1em;">
     <div style="background: white; border-radius: 50%; padding: 8px;">
       <img src="icon.png" alt="Time To Focus Logo" style="height: 40px; display: block;">
     </div>
-    <h1 style="margin: 0;">Time To Focus</h1>
+    <h1 style="margin: 0; font-size: 2.2em;">Time To Focus</h1>
   </div>
-  <p>The ultimate Chrome extension for focus, discipline, and productivity.</p>
 
+  <p style="font-size: 1.2em; margin: 0 auto 0.5em; max-width: 600px;">
+    The ultimate Chrome extension for focus, discipline, and productivity.
+  </p>
+  <p style="font-size: 1em; color: #d1d5db; margin-bottom: 1.5em;">No sign-up required. Works instantly.</p>
 
-    <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.5em;">
-  <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome Logo" style="height: 20px;">
-  Install Now
-</a>
-  </header>
+  <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo"
+     class="cta-button"
+     style="display: inline-flex; align-items: center; gap: 0.5em;"
+     aria-label="Install Time To Focus extension from Chrome Web Store">
+    <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="" style="height: 20px;">
+    Add to Chrome – It's Free
+  </a>
+</header>
+
 
   <section id="features">
     <h2>What Makes It Special?</h2>
@@ -101,10 +118,41 @@
       </div>
       <div class="feature">
         <h3>⭐ Get Started Free</h3>
-<p>Explore powerful features for free — unlock the full potential anytime with Premium.</p>
+        <p>Explore powerful features for free — unlock the full potential anytime with Premium.</p>
       </div>
     </div>
   </section>
+
+
+  <section id="who">
+  <h2>Who Is It For?</h2>
+  <ul style="list-style: none; padding: 0; max-width: 600px; margin: auto; text-align: center;">
+    <li>🎓 Students fighting procrastination</li>
+    <li>👩‍💻 Remote workers & freelancers</li>
+    <li>📈 Entrepreneurs staying on track</li>
+    <li>🧠 Anyone building better habits</li>
+  </ul>
+</section>
+
+  
+  <section id="how-it-works">
+  <h2>How It Works</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>🧩 Install</h3>
+      <p>Add the extension to Chrome in one click – no signup needed.</p>
+    </div>
+    <div class="feature">
+      <h3>⚙️ Customize</h3>
+      <p>Choose what to block, set your goals, and define your schedule.</p>
+    </div>
+    <div class="feature">
+      <h3>🎉 Stay Focused</h3>
+      <p>Work in peace, build discipline, and track your progress daily.</p>
+    </div>
+  </div>
+</section>
+
 
   <section id="comparison">
     <h2>Free vs Premium</h2>
