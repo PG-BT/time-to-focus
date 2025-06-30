@@ -35,17 +35,33 @@
     .buy-button:hover { background: #fb923c; }
     .strike { text-decoration: line-through; color: #9ca3af; margin-right: 0.3em; }
     .best-value { display: block; margin-top: 0.5em; color: #059669; font-weight: bold; }
-    .faq summary {
-      cursor: pointer;
-      color: #4f46e5;
-      font-weight: 600;
-      margin-bottom: 0.5em;
-    }
-    
-    .faq p {
-      margin: 0.5em 0 0 0;
-      color: #374151;
-    }
+.faq summary {
+  cursor: pointer;
+  color: #4f46e5;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::before {
+  content: "▶";
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  color: #4f46e5;
+}
+
+.faq[open] summary::before {
+  transform: rotate(90deg);
+}
+
 
   </style>
 </head>
