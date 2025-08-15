@@ -334,6 +334,63 @@
     </div>
   </section>
 
+
+<!-- Contact Section -->
+<section id="contact" style="max-width: 900px; margin: 4rem auto; padding: 3rem 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 1.2rem;">Contact</h2>
+  <p style="font-size: 1.05rem; color: #4b5563; margin-bottom: 2rem;">
+    Questions, ideas, partnerships? Drop me a line — no forms, just email.
+  </p>
+  
+  <a href="mailto:pgbuilds.tech@gmail.com" id="contact-email"
+     style="
+       display:inline-block;
+       font-weight:800;
+       font-size:clamp(1.8rem, 4vw, 2.2rem);
+       color:#4f46e5;
+       text-decoration:none;
+       padding:1rem 1.5rem;
+       border-radius:0.75rem;
+       border:1px solid #e5e7eb;
+       background:rgba(79,70,229,0.06);
+       box-shadow:0 6px 18px rgba(0,0,0,.05);
+       margin-bottom:0.8rem;
+     ">
+    pgbuilds.tech@gmail.com
+  </a>
+
+  <div>
+    <a href="#" id="copy-email"
+       style="
+         font-size:0.88rem;
+         font-weight:600;
+         color:#4f46e5;
+         text-decoration:none;
+         padding:0.35rem 0.8rem;
+         border-radius:6px;
+         border:1px solid rgba(79,70,229,0.35);
+         background:rgba(79,70,229,0.08);
+       ">
+      Copy email
+    </a>
+  </div>
+
+  <div id="copy-toast"
+       style="
+         font-size:0.85rem;
+         font-weight:600;
+         color:#059669;
+         opacity:0;
+         transform: translateY(4px);
+         transition: opacity .2s ease, transform .2s ease;
+         margin-top:0.5rem;
+       ">
+    Email copied
+  </div>
+</section>
+
+  
+
 <section id="faq">
   <h2>Frequently Asked Questions</h2>
   <details class="faq"><summary>How do I activate Premium?</summary><div>After purchase, copy your license key and paste it in the extension settings.</div></details>
@@ -384,6 +441,48 @@
 
     window.addEventListener('scroll', onScroll);
     document.addEventListener('DOMContentLoaded', onScroll); // od razu aktywne
+
+
+
+    // Copy email to clipboard
+(function(){
+  const btn = document.getElementById('copy-email');
+  const emailEl = document.getElementById('contact-email');
+  const toast = document.getElementById('copy-toast');
+  if (!btn || !emailEl) return;
+
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const email = (emailEl.textContent || '').trim();
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      // Show toast
+      if (toast){
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(4px)';
+        }, 1400);
+      }
+    } catch (err) {
+      console.warn('Copy failed:', err);
+    }
+  });
+})();
+
   </script>
 </body>
 </html>
