@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="icon.png">
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time To Focus – Stay Productive with Our Chrome Extension</title>
+  <link rel="icon" type="image/png" href="icon.png">
   <meta name="description" content="Time To Focus is a powerful Chrome extension to block distractions, set goals, and track your focus. Start focusing today!">
   
-    <!-- Open Graph (Facebook, Discord, LinkedIn) -->
+  <!-- Open Graph / Twitter Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Time To Focus – Stay Productive with Our Chrome Extension">
   <meta property="og:description" content="Time To Focus is a powerful Chrome extension to block distractions, set goals, and track your focus. Start focusing today!">
   <meta property="og:image" content="https://itstimetofocus.com/og-image.png">
   <meta property="og:url" content="https://itstimetofocus.com">
-  
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Time To Focus – Stay Productive with Our Chrome Extension">
-  <meta name="twitter:description" content="Time To Focus is a powerful Chrome extension to block distractions, set goals, and track your focus. Start focusing today!">
-  <meta name="twitter:image" content="https://itstimetofocus.com/og-image.png">
-
-  <meta name="keywords" content="focus, chrome extension, productivity, block websites, pomodoro, time management, goals">
-  <meta name="author" content="Time To Focus">
-  <meta name="robots" content="index, follow">
-  <title>Time To Focus – Stay Productive with Our Chrome Extension</title>
   
+  <!-- Schema.org markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,471 +37,771 @@
     }
   }
   </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL5D81XSCC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FL5D81XSCC');
+  </script>
+
+  <!-- CSS & JS Libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #6366f1;
+      --primary-dark: #4338ca;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --light: #f8fafc;
+      --dark: #1e293b;
+    }
     
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-    body { margin: 0; font-family: 'Inter', sans-serif; background: #f9fafb; color: #1f2937; line-height: 1.6; }
-    html {scroll-behavior: smooth;}
-    nav { position: sticky; top: 0; background: white; padding: 1em; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 1000; }
-    nav ul { display: flex; justify-content: center; gap: 2em; list-style: none; margin: 0; padding: 0; }
-    nav a { text-decoration: none; color: #4f46e5; font-weight: 600; }
-    nav a:hover { color: #4338ca; }
-    header { background: linear-gradient(135deg, #4c1d95, #7c3aed); color: white; padding: 3em 1em; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { margin-top: 0.6em; font-size: 1.2em; }
-    .cta-button { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; font-weight: 600; padding: 0.9em 2em; font-size: 1em; border-radius: 12px; border: none; margin-top: 1.2em; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 160px; gap: 0.5em; transition: all 0.2s ease-in-out; box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
-    .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-    section { padding: 3em 1em; max-width: 1000px; margin: auto; }
-    h2 { text-align: center; font-size: 2em; margin-bottom: 1em; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; }
-    .feature { background: white; padding: 1.5em; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .feature h3 { margin-top: 0; color: #4f46e5; }
-    table { width: 100%; margin-top: 2em; border-collapse: collapse; }
-    th, td { border: 1px solid #e5e7eb; padding: 1em; text-align: center; }
-    th { background: #4f46e5; color: white; }
-    .check { color: #10b981; font-weight: bold; }
-    .cross { color: #ef4444; font-weight: bold; }
-    footer { background: #111827; color: #e5e7eb; text-align: center; padding: 2em 1em; font-size: 0.9em; }
-    .faq { background: white; padding: 1em; border-radius: 8px; margin-bottom: 1em; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
-    .faq strong { display: block; margin-bottom: 0.4em; color: #4f46e5; }
-    .buy-button { background: #f97316; color: white; padding: 0.8em 1.5em; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 1em; transition: background 0.2s; }
-    .buy-button:hover { background: #fb923c; }
-    .strike { text-decoration: line-through; color: #9ca3af; margin-right: 0.3em; }
-    .best-value { display: block; margin-top: 0.5em; color: #059669; font-weight: bold; }
-    details.faq { background: white; padding: 1em; border-radius: 8px; margin-bottom: 1em; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; }
-    details.faq summary { color: #4f46e5; font-weight: 600; font-size: 1em; outline: none; display: flex; align-items: center; }
-    details.faq[open] { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    details.faq summary::-webkit-details-marker { margin-right: 0.5em; }
-    details.faq.center summary { justify-content: center; }
-    .scrollspy-link.active { color: #111827; font-weight: 700; border-bottom: 2px solid #4f46e5; padding-bottom: 2px; }
-    .scrollspy-link { transition: color 0.2s, border-bottom 0.2s; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link.active:after {
+      width: 100%;
+    }
+    
+    .pricing-card {
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card:hover {
+      transform: scale(1.03);
+    }
+    
+    .highlight-card {
+      border: 2px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight-card:before {
+      content: 'Best Value';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 1rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    
+    .checkmark {
+      color: var(--secondary);
+    }
+    
+    .crossmark {
+      color: #ef4444;
+    }
+    
+    .faq-item {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .faq-item summary {
+      padding: 1.25rem;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .faq-item summary:after {
+      content: '+';
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item[open] summary:after {
+      content: '-';
+    }
+    
+    .faq-item div {
+      padding: 0 1.25rem 1.25rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.1);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      border: 2px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .browser-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
   </style>
 </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FL5D81XSCC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FL5D81XSCC');
-</script>
-<body>
-  
-<nav>
-  <ul>
-    <li><a href="#install" class="scrollspy-link">Install</a></li>
-    <li><a href="#features" class="scrollspy-link">Features</a></li>
-    <li><a href="#premium" class="scrollspy-link">Premium</a></li>
-    <li><a href="#pricing" class="scrollspy-link">Pricing</a></li>
-    <li><a href="#faq" class="scrollspy-link">FAQ</a></li>
-  </ul>
-</nav>
-
-<header id="install">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 0.6em; flex-wrap: wrap; margin-bottom: 1em;">
-    <div style="background: white; border-radius: 50%; padding: 8px;">
-      <img src="icon.png" alt="Time To Focus Logo" style="height: 40px; display: block;">
+<body class="antialiased">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="icon.png" alt="Time To Focus Logo" class="h-10 w-10">
+          <span class="text-xl font-bold text-indigo-600">Time To Focus</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#install" class="nav-link text-gray-700 hover:text-indigo-600">Install</a>
+          <a href="#features" class="nav-link text-gray-700 hover:text-indigo-600">Features</a>
+          <a href="#premium" class="nav-link text-gray-700 hover:text-indigo-600">Premium</a>
+          <a href="#pricing" class="nav-link text-gray-700 hover:text-indigo-600">Pricing</a>
+          <a href="#faq" class="nav-link text-gray-700 hover:text-indigo-600">FAQ</a>
+        </div>
+        <button class="md:hidden focus:outline-none">
+          <i data-feather="menu" class="text-gray-700"></i>
+        </button>
+      </div>
     </div>
-    <h1 style="margin: 0; font-size: 2.2em;">Time To Focus</h1>
-  </div>
+  </nav>
 
-  <p style="font-size: 1.2em; margin: 0 auto 1.5em; max-width: 600px;">
-    The ultimate Chrome extension for focus, discipline, and productivity.
-  </p>
-
-  <!-- Grid buttons -->
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1em;
-    justify-items: center;
-    max-width: 500px;
-    margin: 1.5em auto 0;
-  ">
-    <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo"
-       class="cta-button"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Install Time To Focus extension from Chrome Web Store">
-      <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="" style="height: 20px;">
-      Add to Chrome
-    </a>
-
-    <a href="https://microsoftedge.microsoft.com/addons/detail/ablhahogebaaaemnheepkbnbodmocodd"
-       class="cta-button"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Install Time To Focus extension from Edge Add-ons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="" style="height: 20px;">
-      Add to Edge
-    </a>
-
-    <a href="https://addons.mozilla.org/addon/time-to-focus/"
-       class="cta-button"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Install Time To Focus extension from Mozilla Add-ons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="" style="height: 20px;">
-      Add to Firefox
-    </a>
-
-    <!-- Future Opera -->
-    <!--
-    <a href="#"
-       class="cta-button"
-       aria-disabled="true"
-       onclick="return false"
-       aria-label="Add to Opera (coming soon)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg" alt="" style="height: 20px;">
-      Add to Opera
-    </a>
-    -->
-  </div>
-
-  <p style="font-size: 0.95em; color: #d1d5db; margin-top: 0.8em;">No sign-up required. Works instantly.</p>
-</header>
-
-
-
-
-  <section id="features">
-    <h2>Why Time To Focus Is Different</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>⏱️ Time-Based Blocking</h3>
-        <p>Block specific websites during custom hours and days.</p>
+  <!-- Hero Section -->
+  <header id="install" class="gradient-bg text-white py-20">
+    <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+      <div class="flex items-center justify-center mb-6">
+        <img src="icon.png" alt="Time To Focus Logo" class="h-16 w-16 bg-white p-2 rounded-full">
+        <h1 class="ml-4 text-4xl md:text-5xl font-bold">Time To Focus</h1>
       </div>
-      <div class="feature">
-        <h3>🎯 Goal-Driven Sessions</h3>
-        <p>Add goals to accomplish before unlocking the block.</p>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10">
+        The ultimate Chrome extension for focus, discipline, and productivity.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 max-w-lg mx-auto">
+        <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo"
+           class="btn-primary flex items-center"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome" class="browser-icon">
+          Add to Chrome
+        </a>
+        
+        <a href="https://microsoftedge.microsoft.com/addons/detail/ablhahogebaaaemnheepkbnbodmocodd"
+           class="btn-primary flex items-center"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Edge" class="browser-icon">
+          Add to Edge
+        </a>
+        
+        <a href="https://addons.mozilla.org/addon/time-to-focus/"
+           class="btn-primary flex items-center"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Firefox" class="browser-icon">
+          Add to Firefox
+        </a>
       </div>
-      <div class="feature">
-        <h3>🔥 Full Focus Mode</h3>
-        <p>Pomodoro-style timer that fully blocks distractions while you work.</p>
-      </div>
-      <div class="feature">
-        <h3>📊 Progress Statistics</h3>
-        <p>Track your focus time, completed goals, and daily habits.</p>
-      </div>
-      <div class="feature">
-        <h3>🔐 Password Locks</h3>
-        <p>Prevent yourself from editing or deleting blocks too easily.</p>
-      </div>
-      <div class="feature">
-        <h3>💡 Smart Blocking Options</h3>
-        <p>Use keywords and custom website filters for deep control.</p>
-      </div>
-      <div class="feature">
-        <h3>🌙 Dark Mode</h3>
-        <p>Comfortable for night owls – built-in dark theme support.</p>
-      </div>
-      <div class="feature">
-        <h3>🧠 Mental Discipline</h3>
-        <p>Train your brain to focus consistently with positive habit building.</p>
-      </div>
-      <div class="feature">
-        <h3>⭐ Get Started Free</h3>
-        <p>Explore powerful features for free — unlock the full potential anytime with Premium.</p>
+      
+      <p class="mt-4 text-indigo-100">No sign-up required. Works instantly.</p>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Why Time To Focus Is Different</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon bg-indigo-100 text-indigo-600">
+            <i data-feather="clock"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Time-Based Blocking</h3>
+          <p class="text-gray-600">Block specific websites during custom hours and days.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon bg-green-100 text-green-600">
+            <i data-feather="target"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Goal-Driven Sessions</h3>
+          <p class="text-gray-600">Add goals to accomplish before unlocking the block.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon bg-yellow-100 text-yellow-600">
+            <i data-feather="zap"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Full Focus Mode</h3>
+          <p class="text-gray-600">Pomodoro-style timer that fully blocks distractions while you work.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon bg-blue-100 text-blue-600">
+            <i data-feather="bar-chart-2"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Progress Statistics</h3>
+          <p class="text-gray-600">Track your focus time, completed goals, and daily habits.</p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon bg-purple-100 text-purple-600">
+            <i data-feather="lock"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Password Locks</h3>
+          <p class="text-gray-600">Prevent yourself from editing or deleting blocks too easily.</p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="feature-card bg-white p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon bg-pink-100 text-pink-600">
+            <i data-feather="filter"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Smart Blocking Options</h3>
+          <p class="text-gray-600">Use keywords and custom website filters for deep control.</p>
+        </div>
       </div>
     </div>
   </section>
 
-
-<section style="max-width: 900px; margin: 4rem auto; padding: 3rem 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 1.2rem;">Who is Time To Focus for?</h2>
-  <p style="font-size: 1.1rem; color: #4b5563; max-width: 700px; margin: 0 auto 2.5rem;">
-    Whether you're fighting digital distractions, trying to build lasting focus, or just want a cleaner workflow — Time To Focus is built for real people doing real work.
-  </p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-    <div>
-      <h3 style="color: #4f46e5; font-size: 1.1rem; margin-bottom: 0.3em;">🎓 <span style="font-weight: bold;">Students</span></h3>
-      <p style="color: #374151;">Beat procrastination and stay focused on study sessions and exams.</p>
+  <!-- Who is it for Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Who is Time To Focus for?</h2>
+        <p class="text-xl text-gray-600 mb-12">
+          Whether you're fighting digital distractions, trying to build lasting focus, or just want a cleaner workflow — Time To Focus is built for real people doing real work.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 p-2 rounded-lg mr-4">
+              <i data-feather="book" class="text-indigo-600"></i>
+            </div>
+            <h3 class="text-lg font-bold">Students</h3>
+          </div>
+          <p class="text-gray-600">Beat procrastination and stay focused on study sessions and exams.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="bg-green-100 p-2 rounded-lg mr-4">
+              <i data-feather="briefcase" class="text-green-600"></i>
+            </div>
+            <h3 class="text-lg font-bold">Remote Workers</h3>
+          </div>
+          <p class="text-gray-600">Create structure and discipline in your work-from-home environment.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+              <i data-feather="trending-up" class="text-yellow-600"></i>
+            </div>
+            <h3 class="text-lg font-bold">Entrepreneurs</h3>
+          </div>
+          <p class="text-gray-600">Protect your deep work time and keep distractions from derailing momentum.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-2 rounded-lg mr-4">
+              <i data-feather="activity" class="text-purple-600"></i>
+            </div>
+            <h3 class="text-lg font-bold">Habit Builders</h3>
+          </div>
+          <p class="text-gray-600">Turn focus into a daily ritual and build discipline over time.</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center mt-16 pt-8 border-t border-gray-200">
+        <div class="text-center px-8 py-4">
+          <p class="text-sm text-gray-500">Trusted by</p>
+          <p class="text-3xl font-bold text-indigo-600">40+</p>
+          <p class="text-sm text-gray-500">users boosting their focus worldwide</p>
+        </div>
+        
+        <div class="text-center px-8 py-4">
+          <p class="text-sm text-gray-500">Rated</p>
+          <p class="text-3xl font-bold text-green-600">⭐ 4.7+ stars</p>
+          <p class="text-sm text-gray-500">on Chrome Web Store</p>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 style="color: #4f46e5; font-size: 1.1rem; margin-bottom: 0.3em;">💼 <span style="font-weight: bold;">Remote Workers</span></h3>
-      <p style="color: #374151;">Create structure and discipline in your work-from-home environment.</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">What Users Are Saying</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-gray-50 p-8 rounded-xl mb-8" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+              <i data-feather="user"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Chris</h4>
+              <div class="flex text-yellow-400">
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I really love this extension. I'm ADHD and it's sooo easy for me to get distracted by social media sites that take me down rabbit holes – sometimes for hours. This extension really helps me focus, set goals, and stay focused... just what I needed! The Pomodoro mode is great. Really nice extension!
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+              <i data-feather="user"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">CD WP</h4>
+              <div class="flex text-yellow-400">
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            OK, this really works. If you're disciplined enough to install it, you're disciplined enough to use it! Keep yourself from getting distracted by all the noise that's demanding your attention and just focus for a while. Nice design, nice extension. It works!
+          </p>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo/reviews"
+             class="btn-primary inline-flex items-center"
+             target="_blank"
+             rel="noopener noreferrer">
+            See All Reviews
+          </a>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 style="color: #4f46e5; font-size: 1.1rem; margin-bottom: 0.3em;">🚀 <span style="font-weight: bold;">Entrepreneurs</span></h3>
-      <p style="color: #374151;">Protect your deep work time and keep distractions from derailing momentum.</p>
+  </section>
+
+  <!-- How it Works Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Start in 3 Easy Steps</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-feather="download" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Install</h3>
+          <p class="text-gray-600">Add the extension to Chrome in one click – no signup needed.</p>
+        </div>
+        
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-green-100 text-green-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-feather="settings" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Customize</h3>
+          <p class="text-gray-600">Choose what to block, set your goals, and define your schedule.</p>
+        </div>
+        
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-yellow-100 text-yellow-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-feather="check-circle" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Stay Focused</h3>
+          <p class="text-gray-600">Work in peace, build discipline, and track your progress daily.</p>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 style="color: #4f46e5; font-size: 1.1rem; margin-bottom: 0.3em;">🧠 <span style="font-weight: bold;">Habit Builders</span></h3>
-      <p style="color: #374151;">Turn focus into a daily ritual and build discipline over time.</p>
+  </section>
+
+  <!-- Free vs Premium Section -->
+  <section id="premium" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Free vs Premium</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto border-collapse">
+          <thead>
+            <tr class="bg-indigo-600 text-white">
+              <th class="px-6 py-4 text-left rounded-tl-lg">Feature</th>
+              <th class="px-6 py-4 text-center">Free</th>
+              <th class="px-6 py-4 text-center rounded-tr-lg">Premium</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Max Time Blocks</td>
+              <td class="px-6 py-4 text-center">2</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Custom Blocked Sites</td>
+              <td class="px-6 py-4 text-center">4</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Blocked Keywords</td>
+              <td class="px-6 py-4 text-center">2</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Goals Per Block</td>
+              <td class="px-6 py-4 text-center">3</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Password-Locked Blocks</td>
+              <td class="px-6 py-4 text-center text-red-500 font-bold">Unavailable</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Available</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Backup & Restore</td>
+              <td class="px-6 py-4 text-center text-red-500 font-bold">Unavailable</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Available</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Priority Support</td>
+              <td class="px-6 py-4 text-center text-red-500 font-bold">No</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Yes</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">Ongoing Updates</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Yes</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">Yes</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 italic">Peace of Mind & Flow</td>
+              <td class="px-6 py-4 text-center text-red-500 font-bold">❌</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; border-top: 1px solid #e5e7eb; padding-top: 2rem; gap: 2em; text-align: center;">
-    <div style="flex: 1 1 240px;">
-      <p style="margin: 0; font-size: 0.95em; color: #6b7280;">Trusted by</p>
-      <p style="font-size: 1.6em; font-weight: 700; color: #4f46e5; margin: 0.3em 0;">40+</p>
-      <p style="margin: 0; font-size: 0.9em; color: #6b7280;">users boosting their focus worldwide</p>
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Pricing Options</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Monthly Plan -->
+        <div class="pricing-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-bold text-center mb-4">Monthly</h3>
+          <div class="text-center mb-6">
+            <span class="text-3xl font-bold">$2.99</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>All Premium Features</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>Cancel Anytime</span>
+            </li>
+          </ul>
+          <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239?discount=0" 
+             class="btn-secondary w-full text-center block">
+            Choose Monthly
+          </a>
+        </div>
+        
+        <!-- Yearly Plan -->
+        <div class="pricing-card highlight-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up">
+          <h3 class="text-xl font-bold text-center mb-4">Yearly</h3>
+          <div class="text-center mb-6">
+            <div class="text-gray-500 line-through">$35.88</div>
+            <div>
+              <span class="text-3xl font-bold">$28.70</span>
+              <span class="text-gray-600">/year</span>
+            </div>
+            <div class="text-green-600 font-bold mt-2">Save 20%</div>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>All Premium Features</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>Best Value</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>3-Day Free Trial</span>
+            </li>
+          </ul>
+          <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239?discount=0" 
+             class="btn-primary w-full text-center block">
+            Choose Yearly
+          </a>
+        </div>
+        
+        <!-- Lifetime Plan -->
+        <div class="pricing-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-bold text-center mb-4">One-Time</h3>
+          <div class="text-center mb-6">
+            <span class="text-3xl font-bold">$49.99</span>
+            <span class="text-gray-600">one-time</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>All Premium Features</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>Pay Once, Use Forever</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+              <span>Future Updates Included</span>
+            </li>
+          </ul>
+          <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239?discount=0" 
+             class="btn-secondary w-full text-center block">
+            Buy Once
+          </a>
+        </div>
+      </div>
+      
+      <p class="text-center text-gray-500 mt-6">3-day free trial included – cancel anytime</p>
     </div>
-    <div style="flex: 1 1 240px;">
-      <p style="margin: 0; font-size: 0.95em; color: #6b7280;">Rated</p>
-      <p style="font-size: 1.6em; font-weight: 700; color: #10b981; margin: 0.3em 0;">⭐ 4.7+ stars</p>
-      <p style="margin: 0; font-size: 0.9em; color: #6b7280;">on Chrome Web Store</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-2xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Contact</h2>
+        <p class="text-xl text-gray-600 mb-10">
+          Questions, ideas, partnerships? Drop me a line — no forms, just email.
+        </p>
+        
+        <div class="bg-indigo-50 p-6 rounded-xl inline-block">
+          <a href="mailto:pgbuilds.tech@gmail.com" id="contact-email" class="text-2xl md:text-3xl font-bold text-indigo-600 hover:text-indigo-700">
+            pgbuilds.tech@gmail.com
+          </a>
+        </div>
+        
+        <button id="copy-email" class="mt-6 px-4 py-2 bg-indigo-100 text-indigo-600 rounded-lg font-medium hover:bg-indigo-200 transition">
+          Copy email
+        </button>
+        
+        <div id="copy-toast" class="mt-2 text-green-600 opacity-0 transition-opacity">
+          Email copied to clipboard!
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section id="reviews" style="max-width: 900px; margin: 4rem auto; padding: 3rem 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">What Users Are Saying</h2>
-
-  <div style="display: flex; flex-direction: column; gap: 2rem;">
-    <div style="border-left: 4px solid #10b981; padding-left: 1.2rem;">
-      <p style="font-size: 1.05rem; color: #374151; margin-bottom: 0.6rem;">
-        <strong>Chris</strong> <span style="color: #facc15;">★★★★★</span>
-      </p>
-      <p style="color: #4b5563; margin: 0;">
-        I really love this extension. I'm ADHD and it's sooo easy for me to get distracted by social media sites that take me down rabbit holes – sometimes for hours. This extension really helps me focus, set goals, and stay focused... just what I needed! The Pomodoro mode is great. Really nice extension!
-      </p>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Frequently Asked Questions</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <details class="faq-item bg-white mb-4 shadow-sm" data-aos="fade-up">
+          <summary>How do I activate Premium?</summary>
+          <div>After purchase, copy your license key and paste it in the extension settings.</div>
+        </details>
+        
+        <details class="faq-item bg-white mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <summary>Do I get future updates?</summary>
+          <div>Yes! Premium includes all future updates and new features.</div>
+        </details>
+        
+        <details class="faq-item bg-white mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <summary>What if I have questions or issues?</summary>
+          <div>Premium users get priority email support – just reach out.</div>
+        </details>
+        
+        <details class="faq-item bg-white mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+          <summary>What's Full Focus mode?</summary>
+          <div>It's a Pomodoro-style timer that blocks all distractions until time runs out.</div>
+        </details>
+      </div>
     </div>
+  </section>
 
-    <div style="border-left: 4px solid #10b981; padding-left: 1.2rem;">
-      <p style="font-size: 1.05rem; color: #374151; margin-bottom: 0.6rem;">
-        <strong>CD WP</strong> <span style="color: #facc15;">★★★★★</span>
-      </p>
-      <p style="color: #4b5563; margin: 0;">
-        OK, this really works. If you're disciplined enough to install it, you're disciplined enough to use it! Keep yourself from getting distracted by all the noise that's demanding your attention and just focus for a while. Nice design, nice extension. It works!
-      </p>
+  <!-- Privacy Section -->
+  <section id="privacy" class="py-12 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <details class="faq-item bg-gray-50" data-aos="fade-up">
+          <summary class="text-center font-bold">Privacy Policy – Time To Focus</summary>
+          <div class="text-center">
+            <p class="mb-4">This extension does not collect, store or transmit any personal information about the user. All settings and data are stored locally on the user's device and are not shared with third parties.</p>
+            <p>We do not use any tracking systems, remote servers or external analytics services.</p>
+          </div>
+        </details>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="https://chromewebstore.google.com/detail/time-to-focus-block-distr/kngalkbbgnodcmbmkedgkahdofljoomo/reviews"
-       class="cta-button"
-       target="_blank"
-       rel="noopener noreferrer">
-      See All Reviews
-    </a>
-  </div>
-</section>  
-
-<section>
-  <h2>Start in 3 Easy Steps</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>🧩 Install</h3>
-      <p>Add the extension to Chrome in one click – no signup needed.</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Time To Focus. Built with focus and care. — <a href="mailto:pgbuilds.tech@gmail.com" class="text-indigo-400 hover:text-indigo-300">Contact</a></p>
     </div>
-    <div class="feature">
-      <h3>⚙️ Customize</h3>
-      <p>Choose what to block, set your goals, and define your schedule.</p>
-    </div>
-    <div class="feature">
-      <h3>🎉 Stay Focused</h3>
-      <p>Work in peace, build discipline, and track your progress daily.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-
-<section id="premium">
-  <h2>Free vs Premium</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Free</th>
-        <th>Premium</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Max Time Blocks</td><td>2</td><td class="check">Unlimited</td></tr>
-      <tr><td>Custom Blocked Sites</td><td>4</td><td class="check">Unlimited</td></tr>
-      <tr><td>Blocked Keywords</td><td>2</td><td class="check">Unlimited</td></tr>
-      <tr><td>Goals Per Block</td><td>3</td><td class="check">Unlimited</td></tr>
-      <tr><td>Password-Locked Blocks</td><td class="cross">Unavailable</td><td class="check">Available</td></tr>
-      <tr><td>Backup & Restore</td><td class="cross">Unavailable</td><td class="check">Available</td></tr>
-      <tr><td>Priority Support</td><td class="cross">No</td><td class="check">Yes</td></tr>
-      <tr><td>Ongoing Updates</td><td class="check">Yes</td><td class="check">Yes</td></tr>
-      <tr>
-        <td><em>Peace of Mind & Flow</em></td>
-        <td class="cross">❌</td>
-        <td class="check">✅</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="pricing">
-  <h2>Pricing Options</h2>
-  <table class="pricing-table" style="table-layout: fixed; width: 100%;">
-    <thead>
-      <tr>
-        <th style="width: 33.33%;">Monthly</th>
-        <th class="highlight" style="width: 33.33%;">Yearly (Save 20%)</th>
-        <th style="width: 33.33%;">One-Time Purchase</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>$2.99 / month</td>
-        <td class="highlight">
-          <span class="strike">$35.88</span>
-          <span>$28.70 / year</span>
-          <span class="best-value">Best Value</span>
-        </td>
-        <td>$49.99 one-time</td>
-      </tr>
-    </tbody>
-  </table>
-  <div style="text-align: center; margin-top: 1.5em;">
-    <a href="https://extensiohub.lemonsqueezy.com/buy/64b8e6b4-e1a2-4fd8-8d22-b1c972466239?discount=0" class="buy-button">Upgrade to Premium</a>
-    <p style="margin-top: 0.5em; font-size: 0.9em; color: #6b7280;">3-day free trial included – cancel anytime</p>
-  </div>
-</section>
-
-
-<!-- Contact Section -->
-<section id="contact" style="max-width: 900px; margin: 4rem auto; padding: 3rem 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 1.2rem;">Contact</h2>
-  <p style="font-size: 1.05rem; color: #4b5563; margin-bottom: 2rem;">
-    Questions, ideas, partnerships? Drop me a line — no forms, just email.
-  </p>
-  
-  <a href="mailto:pgbuilds.tech@gmail.com" id="contact-email"
-     style="
-       display:inline-block;
-       font-weight:800;
-       font-size:clamp(1.8rem, 4vw, 2.2rem);
-       color:#4f46e5;
-       text-decoration:none;
-       padding:1rem 1.5rem;
-       border-radius:0.75rem;
-       border:1px solid #e5e7eb;
-       background:rgba(79,70,229,0.06);
-       box-shadow:0 6px 18px rgba(0,0,0,.05);
-       margin-bottom:0.8rem;
-     ">
-    pgbuilds.tech@gmail.com
-  </a>
-
-  <div>
-    <a href="#" id="copy-email"
-       style="
-         font-size:0.88rem;
-         font-weight:600;
-         color:#4f46e5;
-         text-decoration:none;
-         padding:0.35rem 0.8rem;
-         border-radius:6px;
-         border:1px solid rgba(79,70,229,0.35);
-         background:rgba(79,70,229,0.08);
-       ">
-      Copy email
-    </a>
-  </div>
-
-  <div id="copy-toast"
-       style="
-         font-size:0.85rem;
-         font-weight:600;
-         color:#059669;
-         opacity:0;
-         transform: translateY(4px);
-         transition: opacity .2s ease, transform .2s ease;
-         margin-top:0.5rem;
-       ">
-    Email copied
-  </div>
-</section>
-
-  
-
-<section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <details class="faq"><summary>How do I activate Premium?</summary><div>After purchase, copy your license key and paste it in the extension settings.</div></details>
-  <details class="faq"><summary>Do I get future updates?</summary><div>Yes! Premium includes all future updates and new features.</div></details>
-  <details class="faq"><summary>What if I have questions or issues?</summary><div>Premium users get priority email support – just reach out.</div></details>
-  <details class="faq"><summary>What’s Full Focus mode?</summary><div>It’s a Pomodoro-style timer that blocks all distractions until time runs out.</div></details>
-</section>
-
-
-
-<section id="privacy" style="max-width: 1000px; margin: 2em auto; padding: 0 1em;">
-  <h2>Privacy Policy – Time To Focus</h2>
-  <details class="faq center">
-    <summary>Time To Focus extension</summary>
-    <div>
-      <p>This extension does not collect, store or transmit any personal information about the user. All settings and data are stored locally on the user’s device and are not shared with third parties.</p>
-      <p>We do not use any tracking systems, remote servers or external analytics services.</p>
-      <p>If you have any questions, please <a href="mailto:pgbuilds.tech@gmail.com" style="color: #4f46e5;">Contact Us</a>.</p>
-    </div>
-  </details>
-</section>
-
-
-
-<footer>
-  © 2025 Time To Focus. Built with focus and care. — <a href="mailto:pgbuilds.tech@gmail.com" style="color: #93c5fd;">Contact</a>
-</footer>
-
-<script>
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const navLinks = document.querySelectorAll('.scrollspy-link');
-
-  function onScroll() {
-    let scrollPos = window.scrollY + 100; // +100 dla bufora
-
-    sections.forEach(section => {
-      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-        const id = section.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
-      }
+  <!-- Scripts -->
+  <script>
+    // Initialize animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
     });
-  }
-
-  window.addEventListener('scroll', onScroll);
-  document.addEventListener('DOMContentLoaded', onScroll); // od razu aktywne
-
-
-
-  // Copy email to clipboard
-  (function(){
-    const btn = document.getElementById('copy-email');
-    const emailEl = document.getElementById('contact-email');
+    
+    // Feather icons
+    feather.replace();
+    
+    // Scroll spy navigation
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function onScroll() {
+      let scrollPos = window.scrollY + 100;
+      
+      sections.forEach(section => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          const id = section.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', onScroll);
+    document.addEventListener('DOMContentLoaded', onScroll);
+    
+    // Copy email functionality
+    const copyBtn = document.getElementById('copy-email');
     const toast = document.getElementById('copy-toast');
-    if (!btn || !emailEl) return;
-
-    btn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      const email = (emailEl.textContent || '').trim();
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
+    
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const email = 'pgbuilds.tech@gmail.com';
+        
+        try {
           await navigator.clipboard.writeText(email);
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.position = 'fixed';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.focus();
-          ta.select();
-          document.execCommand('copy');
-          ta.remove();
-        }
-        // Show toast
-        if (toast){
-          toast.style.opacity = '1';
-          toast.style.transform = 'translateY(0)';
+          
+          // Show toast
+          toast.classList.remove('opacity-0');
           setTimeout(() => {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateY(4px)';
-          }, 1400);
+            toast.classList.add('opacity-0');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy email: ', err);
         }
-      } catch (err) {
-        console.warn('Copy failed:', err);
-      }
-    });
-  })();
-
-</script>
+      });
+    }
+  </script>
 </body>
-
 </html>
