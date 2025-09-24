@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
   <title>Time To Focus — Block Distractions. Double Your Deep Work.</title>
   <link rel="icon" type="image/png" href="icon.png" />
   <meta name="description" content="Time To Focus blocks distractions, adds goal‑locks, and tracks your progress. Boost your deep work by up to 2.5× with Pomodoro, schedules, and smart blocking." />
@@ -49,7 +50,7 @@
   <style>
     :root { --bg: #0b1020; --card: rgba(255,255,255,0.06); --line: rgba(255,255,255,0.12); --brand:#7c8cff; --brand-2:#38e2b8; }
     html, body { scroll-behavior:smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; background: radial-gradient(1200px 600px at 10% -10%, rgba(124,140,255,.25), transparent), radial-gradient(1000px 500px at 90% 10%, rgba(56,226,184,.20), transparent), var(--bg); color: #e8ecf7; }
+    body { overflow-x: hidden; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; background: radial-gradient(1200px 600px at 10% -10%, rgba(124,140,255,.25), transparent), radial-gradient(1000px 500px at 90% 10%, rgba(56,226,184,.20), transparent), var(--bg); color: #e8ecf7; }
     .glass { background: var(--card); backdrop-filter: blur(10px); border: 1px solid var(--line); }
     .ringy { box-shadow: 0 0 0 8px rgba(124,140,255,.12); }
     .gradient-btn { background: linear-gradient(135deg, var(--brand), #5a6bff 30%, #7c8cff 60%, #9aa6ff 100%); }
@@ -57,6 +58,24 @@
     .accent { background: linear-gradient(135deg, var(--brand-2), #74f1d5); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .grid-lines { background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; }
     .install-bounce { animation: bob 2.4s ease-in-out infinite; } @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+  *,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { 
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;       /* klucz – obcina wszelkie nadmiary po prawej */
+}
+
+/* Obrazy nigdy nie wyjdą poza kontener */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Karty ze szkłem niech obcinają wewnętrzne poświaty */
+.glass { overflow: hidden; }
+
+/* Drobna asekuracja: sekcje też nie wyjdą poza ekran */
+section { overflow-x: clip; }
   </style>
 </head>
 <body class="antialiased">
