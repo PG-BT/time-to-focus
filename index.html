@@ -7,16 +7,12 @@
   <title>Time To Focus - Block Distractions. Double Your Deep Work.</title>
   <link rel="icon" type="image/png" href="icon.png" />
   <meta name="description" content="Time To Focus blocks distractions, adds goal-locks, and tracks your progress. Boost your deep work by up to 2.5× with Pomodoro, schedules, and smart blocking." />
-
-  <!-- Open Graph / Twitter Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Time To Focus — Block Distractions. Double Your Deep Work." />
   <meta property="og:description" content="Boost focus by up to 2.5×. Website blocker + Pomodoro + goal locks. Rated 4.7★." />
   <meta property="og:image" content="https://itstimetofocus.com/og-image.png" />
   <meta property="og:url" content="https://itstimetofocus.com" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Schema.org markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,15 +28,11 @@
     "publisher": {"@type": "Organization", "name": "ExtensioHub"}
   }
   </script>
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL5D81XSCC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FL5D81XSCC');
   </script>
-
-  <!-- Tailwind & libs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -48,28 +40,29 @@
   <script src="https://unpkg.com/feather-icons"></script>
 
   <style>
-    :root { --bg: #0b1020; --card: rgba(255,255,255,0.06); --line: rgba(255,255,255,0.12); --brand:#7c8cff; --brand-2:#38e2b8; }
+    :root { --bg:#0b1020; --card:rgba(255,255,255,0.06); --line:rgba(255,255,255,0.12); --brand:#7c8cff; --brand-2:#38e2b8; }
     html, body { scroll-behavior:smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; background: radial-gradient(1200px 600px at 10% -10%, rgba(124,140,255,.25), transparent), radial-gradient(1000px 500px at 90% 10%, rgba(56,226,184,.20), transparent), var(--bg); color: #e8ecf7; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; background: radial-gradient(1200px 600px at 10% -10%, rgba(124,140,255,.25), transparent), radial-gradient(1000px 500px at 90% 10%, rgba(56,226,184,.20), transparent), var(--bg); color:#e8ecf7; }
     .glass { background: var(--card); backdrop-filter: blur(10px); border: 1px solid var(--line); }
     .ringy { box-shadow: 0 0 0 8px rgba(124,140,255,.12); }
     .gradient-btn { background: linear-gradient(135deg, var(--brand), #5a6bff 30%, #7c8cff 60%, #9aa6ff 100%); }
     .gradient-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
-    .accent { background: linear-gradient(135deg, var(--brand-2), #74f1d5); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .grid-lines { background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; }
-    .install-bounce { animation: bob 2.4s ease-in-out infinite; } @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
-
-    /* Contact form small polish */
-    .focus-ring:focus { outline: none; box-shadow: 0 0 0 6px rgba(124,140,255,.18); border-color: rgba(124,140,255,.45); }
+    .accent { background: linear-gradient(135deg, var(--brand-2), #74f1d5); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .grid-lines { background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size:48px 48px; }
+    .install-bounce { animation:bob 2.4s ease-in-out infinite; } @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+    .focus-ring:focus { outline:none; box-shadow:0 0 0 6px rgba(124,140,255,.18); border-color: rgba(124,140,255,.45); }
     .toast { display:none; margin-top:14px; border-radius:14px; padding:12px 14px; font-weight:700; border:1px solid rgba(255,255,255,.14); }
     .toast.show { display:block; }
     .toast.ok { background: rgba(56,226,184,.10); border-color: rgba(56,226,184,.28); color: rgba(236,253,245,.95); }
     .toast.err { background: rgba(239,68,68,.10); border-color: rgba(239,68,68,.28); color: rgba(254,226,226,.95); }
+    .pp-btn { width:100%; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; border-radius:16px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); font-weight:800; }
+    .pp-btn:hover { background: rgba(255,255,255,.08); }
+    .pp-icon { width:18px; height:18px; transition: transform .25s ease; opacity:.9; }
+    .pp-open .pp-icon { transform: rotate(180deg); }
+    .pp-content { overflow:hidden; max-height:0; transition: max-height .45s ease; }
   </style>
 </head>
 <body class="antialiased">
-
-  <!-- Sticky Nav -->
   <header class="sticky top-0 z-50">
     <div class="glass">
       <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
@@ -95,7 +88,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="relative overflow-hidden">
     <div class="grid-lines absolute inset-0 opacity-30 pointer-events-none"></div>
     <div class="mx-auto max-w-7xl px-6 pt-16 pb-8 md:pt-24 md:pb-12">
@@ -153,7 +145,6 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section id="features" class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="text-center max-w-3xl mx-auto">
@@ -195,7 +186,6 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section id="how" class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
@@ -222,14 +212,12 @@
     </div>
   </section>
 
-  <!-- FREE vs PREMIUM -->
   <section id="premium" class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="text-center max-w-3xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-extrabold" data-aos="fade-up">Free vs Premium</h2>
         <p class="mt-3 text-white/70" data-aos="fade-up" data-aos-delay="50">Start free. Upgrade when you want unlimited power features.</p>
       </div>
-
       <div class="hidden md:block mt-10 overflow-x-auto">
         <table class="w-full text-left glass rounded-2xl overflow-hidden">
           <thead class="bg-white/10 text-sm">
@@ -250,7 +238,6 @@
           </tbody>
         </table>
       </div>
-
       <div class="block md:hidden space-y-4 mt-10">
         <div class="glass rounded-2xl p-4"><h3 class="font-bold">Max time blocks</h3><p class="text-sm text-white/70">Free: 2</p><p class="text-sm text-emerald-300">Premium: Unlimited</p></div>
         <div class="glass rounded-2xl p-4"><h3 class="font-bold">Custom blocked sites</h3><p class="text-sm text-white/70">Free: 4</p><p class="text-sm text-emerald-300">Premium: Unlimited</p></div>
@@ -263,7 +250,6 @@
     </div>
   </section>
 
-  <!-- PRICING -->
   <section id="pricing" class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="text-center max-w-2xl mx-auto">
@@ -307,7 +293,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="text-center max-w-3xl mx-auto">
@@ -327,7 +312,7 @@
         </figure>
         <figure class="glass rounded-2xl p-6" data-aos="fade-up" data-aos-delay="75">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-content"><i data-feather="user"></i></div>
+            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i data-feather="user"></i></div>
             <div>
               <figcaption class="font-bold">CD WP</figcaption>
               <div class="text-amber-300">★★★★★</div>
@@ -342,71 +327,55 @@
     </div>
   </section>
 
-  <!-- FAQ (new / expanded, extension-focused) -->
   <section id="faq" class="py-20">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="text-center max-w-2xl mx-auto">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center">
         <h2 class="text-3xl md:text-5xl font-extrabold" data-aos="fade-up">FAQ</h2>
         <p class="mt-3 text-white/70" data-aos="fade-up" data-aos-delay="50">Answers to common questions about Time To Focus.</p>
       </div>
-
-      <div class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="mt-10 space-y-4">
         <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">How do I activate Premium?</summary>
           <p class="mt-3 text-white/80">After purchase, copy your license key and paste it in the extension settings.</p>
         </details>
-
-        <details class="glass rounded-2xl p-6" data-aos="fade-up" data-aos-delay="50">
+        <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">Does it work without an account?</summary>
           <p class="mt-3 text-white/80">Yes. No account is required. Your rules and stats are saved locally in your browser.</p>
         </details>
-
         <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">Will it block on both Chrome and Edge?</summary>
           <p class="mt-3 text-white/80">Yes. It supports Chromium-based browsers like Chrome and Edge (and also Firefox).</p>
         </details>
-
-        <details class="glass rounded-2xl p-6" data-aos="fade-up" data-aos-delay="50">
+        <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">What is “Full Focus” mode?</summary>
           <p class="mt-3 text-white/80">It’s a Pomodoro-style timer with stronger blocking so distractions can’t sneak in mid-session.</p>
         </details>
-
         <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">Why do I still see a site sometimes?</summary>
           <p class="mt-3 text-white/80">If the page was already open before a block started, refresh it. Also check exceptions / allow-lists and time rules.</p>
         </details>
-
-        <details class="glass rounded-2xl p-6" data-aos="fade-up" data-aos-delay="50">
+        <details class="glass rounded-2xl p-6" data-aos="fade-up">
           <summary class="font-bold cursor-pointer">Where can I read the Privacy Policy?</summary>
-          <p class="mt-3 text-white/80">Scroll to the bottom of this page or use the “Privacy” link in the navigation.</p>
+          <p class="mt-3 text-white/80">Scroll to the Privacy section near the bottom of this page.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="py-20">
     <div class="mx-auto max-w-4xl px-6">
       <div class="glass rounded-2xl p-8">
         <h3 class="text-2xl md:text-3xl font-extrabold text-center">Contact support</h3>
-        <p class="mt-3 text-center text-white/70">
-          Have a question, bug report, or feature idea? Send us a message.
-        </p>
-
+        <p class="mt-3 text-center text-white/70">Have a question, bug report, or feature idea? Send us a message.</p>
         <form id="contact-form" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
-          <!-- Web3Forms key -->
           <input type="hidden" name="access_key" value="e78c955e-6e70-45a3-abf0-99a95d6d8651" />
-
           <div>
             <label class="text-sm font-semibold text-white/80">Your email *</label>
-            <input id="cf-email" type="email" name="email" required
-              class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus-ring" placeholder="name@email.com" />
+            <input id="cf-email" type="email" name="email" required class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus-ring" placeholder="name@email.com" />
           </div>
-
           <div>
             <label class="text-sm font-semibold text-white/80">Topic *</label>
-            <select id="cf-topic" name="topic" required
-              class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white focus-ring">
+            <select id="cf-topic" name="topic" required class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white focus-ring">
               <option value="" selected disabled style="color:#0b1020;background:#ffffff;">Select topic</option>
               <option style="color:#0b1020;background:#ffffff;">Bug report</option>
               <option style="color:#0b1020;background:#ffffff;">Feature request</option>
@@ -415,25 +384,16 @@
               <option style="color:#0b1020;background:#ffffff;">Other</option>
             </select>
           </div>
-
           <div class="md:col-span-2">
             <label class="text-sm font-semibold text-white/80">Message *</label>
-            <textarea id="cf-message" name="message" rows="5" required
-              class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus-ring"
-              placeholder="Describe the issue, expected behavior, and steps to reproduce…"></textarea>
+            <textarea id="cf-message" name="message" rows="5" required class="mt-1 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus-ring" placeholder="Describe the issue, expected behavior, and steps to reproduce…"></textarea>
           </div>
-
           <div class="md:col-span-2 flex flex-col gap-4">
-            <button id="cf-submit" type="submit"
-              class="gradient-btn px-6 py-3 rounded-xl font-semibold shadow text-center">
-              Send message
-            </button>
-
+            <button id="cf-submit" type="submit" class="gradient-btn px-6 py-3 rounded-xl font-semibold shadow text-center">Send message</button>
             <p class="text-xs text-white/50 text-center">
               Your message will be sent to our support inbox via a form provider.
               <a href="#privacy-policy" class="underline font-semibold">Privacy Policy</a>
             </p>
-
             <div id="cf-toast" class="toast"></div>
           </div>
         </form>
@@ -441,7 +401,6 @@
     </div>
   </section>
 
-  <!-- PRIVACY POLICY (new, at the very bottom) -->
   <section id="privacy-policy" class="py-20">
     <div class="mx-auto max-w-5xl px-6">
       <div class="glass rounded-2xl p-8">
@@ -450,78 +409,65 @@
           <p class="mt-3 text-white/70">Last updated: 2025</p>
         </div>
 
-        <div class="mt-10 space-y-8 text-white/80 leading-relaxed">
-          <div>
-            <h4 class="text-xl font-extrabold text-white">1) Overview</h4>
-            <p class="mt-2">
-              We take privacy seriously. Time To Focus is built to help you focus without tracking you.
-              We aim to minimize data collection and keep your information under your control.
-            </p>
-          </div>
+        <div class="mt-8">
+          <button id="pp-toggle" class="pp-btn" aria-expanded="false" type="button">
+            <span class="text-left">
+              <span class="block text-white font-extrabold">View Privacy Policy</span>
+              <span class="block text-white/60 text-sm font-semibold mt-1">Click to expand</span>
+            </span>
+            <svg class="pp-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">2) Extension data (Chrome / Edge / Firefox)</h4>
-            <p class="mt-2">
-              The Time To Focus extension does <b>not</b> collect, store, or sell your personal data on our servers.
-              Your rules, schedules, goals, and statistics are stored locally in your browser.
-            </p>
-            <p class="mt-3">
-              We do not collect browsing history, visited URLs, or the content of pages you browse.
-            </p>
-          </div>
+          <div id="pp-shell" class="pp-content">
+            <div class="mt-8 space-y-8 text-white/80 leading-relaxed">
+              <div>
+                <h4 class="text-xl font-extrabold text-white">1) Overview</h4>
+                <p class="mt-2">We take privacy seriously. Time To Focus is built to help you focus without tracking you. We aim to minimize data collection and keep your information under your control.</p>
+              </div>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">3) Website analytics</h4>
-            <p class="mt-2">
-              Our website may use analytics (e.g., Google Analytics) to understand general traffic and improve the site.
-              This typically includes aggregated usage metrics (such as page views) and may involve cookies depending on your browser settings.
-            </p>
-          </div>
+              <div>
+                <h4 class="text-xl font-extrabold text-white">2) Extension data (Chrome / Edge / Firefox)</h4>
+                <p class="mt-2">The Time To Focus extension does <b>not</b> collect, store, or sell your personal data on our servers. Your rules, schedules, goals, and statistics are stored locally in your browser.</p>
+                <p class="mt-3">We do not collect browsing history, visited URLs, or the content of pages you browse.</p>
+              </div>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">4) Support & contact form (Web3Forms)</h4>
-            <p class="mt-2">
-              If you contact us through the website contact form or a support form inside the app, we collect only the
-              information you explicitly provide, such as your email address, selected topic, and message content.
-            </p>
-            <p class="mt-3">
-              Messages sent via the form are transmitted to our support inbox using a trusted third-party form provider (Web3Forms).
-              This information is used <b>solely</b> to respond to your support request.
-              We do not use support messages for marketing, advertising, or profiling.
-            </p>
-          </div>
+              <div>
+                <h4 class="text-xl font-extrabold text-white">3) Website analytics</h4>
+                <p class="mt-2">Our website may use analytics (e.g., Google Analytics) to understand general traffic and improve the site. This typically includes aggregated usage metrics (such as page views) and may involve cookies depending on your browser settings.</p>
+              </div>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">5) Data retention</h4>
-            <p class="mt-2">
-              Support messages are retained only as long as necessary to resolve your request and for basic support record-keeping.
-            </p>
-          </div>
+              <div>
+                <h4 class="text-xl font-extrabold text-white">4) Support & contact forms (Web3Forms)</h4>
+                <p class="mt-2">If you contact us through the website contact form or a support form inside the app, we collect only the information you explicitly provide, such as your email address, selected topic, and message content.</p>
+                <p class="mt-3">In the extension support form, if you choose to enable <b>Include debug info</b>, the message may also include optional technical details (for example: browser type, language, timezone, and a timestamp) to help us troubleshoot faster.</p>
+                <p class="mt-3">Messages sent via the form are transmitted to our support inbox using a trusted third-party form provider (Web3Forms). This information is used <b>solely</b> to respond to your support request. We do not use support messages for marketing, advertising, or profiling.</p>
+              </div>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">6) Contact / deletion requests</h4>
-            <p class="mt-2">
-              If you would like your support message or associated data to be deleted, contact us at:
-              <a href="mailto:pgbuilds.tech@gmail.com" class="underline font-semibold">pgbuilds.tech@gmail.com</a>
-            </p>
-          </div>
+              <div>
+                <h4 class="text-xl font-extrabold text-white">5) Data retention</h4>
+                <p class="mt-2">Support messages are retained only as long as necessary to resolve your request and for basic support record-keeping.</p>
+              </div>
 
-          <div>
-            <h4 class="text-xl font-extrabold text-white">7) Changes</h4>
-            <p class="mt-2">
-              We may update this policy from time to time. Changes will be posted on this page.
-            </p>
-          </div>
-        </div>
+              <div>
+                <h4 class="text-xl font-extrabold text-white">6) Contact / deletion requests</h4>
+                <p class="mt-2">If you would like your support message or associated data to be deleted, contact us at: <a href="mailto:pgbuilds.tech@gmail.com" class="underline font-semibold">pgbuilds.tech@gmail.com</a></p>
+              </div>
 
-        <div class="mt-10 text-center text-xs text-white/50">
-          Disclaimer: “Boost focus by up to 2.5×” is based on self-reported user outcomes and may vary.
+              <div>
+                <h4 class="text-xl font-extrabold text-white">7) Changes</h4>
+                <p class="mt-2">We may update this policy from time to time. Changes will be posted on this page.</p>
+              </div>
+            </div>
+
+            <div class="mt-10 text-center text-xs text-white/50">Disclaimer: “Boost focus by up to 2.5×” is based on self-reported user outcomes and may vary.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="py-8 border-t border-white/10">
     <div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/60">
       <p>© 2025 Time To Focus • Built with focus & care</p>
@@ -532,12 +478,10 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     AOS.init({ duration: 800, easing: 'ease-out', once: true });
     feather.replace();
 
-    // Web3Forms submit (real send)
     const form = document.getElementById("contact-form");
     const toast = document.getElementById("cf-toast");
     const btn = document.getElementById("cf-submit");
@@ -550,12 +494,10 @@
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       const accessKey = (form.querySelector('input[name="access_key"]')?.value || "").trim();
       const email = document.getElementById("cf-email").value.trim();
       const topic = document.getElementById("cf-topic").value.trim();
       const message = document.getElementById("cf-message").value.trim();
-
       if (!accessKey) { showToast("err", "Form is not configured (missing access key)."); return; }
       if (!email || !topic || !message) { showToast("err", "Please fill all required fields."); return; }
 
@@ -570,15 +512,12 @@
       try {
         btn.disabled = true;
         btn.textContent = "Sending…";
-
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify(payload)
         });
-
         const data = await res.json().catch(() => ({}));
-
         if (res.ok && (data.success === true || data.success === "true")) {
           form.reset();
           showToast("ok", "Message sent ✅ We’ll get back to you soon.");
@@ -592,6 +531,33 @@
         btn.disabled = false;
         btn.textContent = "Send message";
       }
+    });
+
+    const ppToggle = document.getElementById("pp-toggle");
+    const ppShell = document.getElementById("pp-shell");
+    const ppWrap = document.querySelector("#privacy-policy .glass");
+
+    function setPP(open) {
+      ppToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        ppWrap.classList.add("pp-open");
+        ppShell.style.maxHeight = ppShell.scrollHeight + "px";
+      } else {
+        ppWrap.classList.remove("pp-open");
+        ppShell.style.maxHeight = "0px";
+      }
+    }
+
+    setPP(false);
+
+    ppToggle.addEventListener("click", () => {
+      const open = ppToggle.getAttribute("aria-expanded") === "true";
+      setPP(!open);
+    });
+
+    window.addEventListener("resize", () => {
+      const open = ppToggle.getAttribute("aria-expanded") === "true";
+      if (open) ppShell.style.maxHeight = ppShell.scrollHeight + "px";
     });
   </script>
 </body>
