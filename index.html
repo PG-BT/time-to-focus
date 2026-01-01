@@ -60,6 +60,27 @@
     .pp-icon { width:18px; height:18px; transition: transform .25s ease; opacity:.9; }
     .pp-open .pp-icon { transform: rotate(180deg); }
     .pp-content { overflow:hidden; max-height:0; transition: max-height .45s ease; }
+
+    .plan-title{display:flex;align-items:center;gap:10px}
+    .plan-dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 6px rgba(124,140,255,.12)}
+    .plan-sub{color:rgba(232,236,247,.65);font-weight:600;font-size:.9rem;margin-top:6px}
+    
+    .plan-table{width:100%;border-collapse:separate;border-spacing:0}
+    .plan-table thead th{background:rgba(255,255,255,.06);font-size:.85rem;text-transform:none}
+    .plan-table th,.plan-table td{padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.10)}
+    .plan-table th:first-child,.plan-table td:first-child{width:52%}
+    .plan-table th:nth-child(2),.plan-table td:nth-child(2),.plan-table th:nth-child(3),.plan-table td:nth-child(3){text-align:center;width:24%}
+    
+    .pill{display:inline-flex;align-items:center;justify-content:center;font-weight:800;line-height:1;border:1px solid transparent;white-space:nowrap}
+    .pill-num{min-width:34px;height:34px;border-radius:999px;background:rgba(124,140,255,.18);border-color:rgba(124,140,255,.28);color:rgba(232,236,247,.95)}
+    .pill-good{padding:9px 14px;border-radius:999px;background:rgba(56,226,184,.12);border-color:rgba(56,226,184,.26);color:rgba(236,253,245,.95)}
+    .pill-bad{padding:9px 14px;border-radius:999px;background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.26);color:rgba(254,226,226,.95)}
+    
+    .plan-table th:nth-child(3),.plan-table td:nth-child(3){background:rgba(124,140,255,.05)}
+    .plan-table th:nth-child(3){border-top:2px solid rgba(124,140,255,.55);border-left:2px solid rgba(124,140,255,.55);border-right:2px solid rgba(124,140,255,.55);border-top-left-radius:14px;border-top-right-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .plan-table td:nth-child(3){border-left:2px solid rgba(124,140,255,.55);border-right:2px solid rgba(124,140,255,.55)}
+    .plan-table tbody tr:last-child td:nth-child(3){border-bottom:2px solid rgba(124,140,255,.55);border-bottom-left-radius:14px;border-bottom-right-radius:14px}
+
   </style>
 </head>
 <body class="antialiased">
